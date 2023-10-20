@@ -1,13 +1,13 @@
 import "./App.css";
+import Intro from "./components/Intro";
 import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="bg-primary w-full overflow-hidden">
-      <div className={`sm:px-16 px-6 flex justify-center items-center`}>
-        <div className={`xl:max-w-[1280px] w-full`}>
-          <Navbar />
-        </div>
+    <div className="bg-gradient-to-r from-cyan-500 to-blue-500">
+      <div className="w-5/6 md:w-4/5 max-w-[768px] m-auto ">
+        <Navbar />
+        <Intro />
       </div>
     </div>
   );

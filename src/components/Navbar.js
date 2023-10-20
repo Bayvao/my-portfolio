@@ -35,19 +35,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full flex py-6 justify-start items-center navbar ">
+    <nav className="w-full flex py-6 justify-start items-end navbar ">
       {/* Logo */}
-      <h1 className="hidden sm:inline-block mx-16 text-2xl text-black">
+      <h1 className="hidden sm:inline-block mx-4 text-2xl text-black">
         Bayvao
       </h1>
 
       {/* Desktop Navigation */}
-      <ul className="list-none sm:flex hidden justify-start items-start flex-1">
+      <ul className="list-none sm:flex hidden justify-start items-start flex-1 mx-8">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
             className={`font-poppins font-normal cursor-pointer text-[16px] ${
-              active === nav.title ? "text-white" : "text-dimWhite"
+              active === nav.title ? "text-green-500" : "text-dimWhite"
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}
           >
@@ -91,7 +91,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <div className="mx-1 md:mx-48 my-2 flex justify-between items-end">
+      <div className="mx-1 md:mx-14 my-2 flex justify-between items-end">
         <input
           type="checkbox"
           name="checkbox"
