@@ -13,10 +13,10 @@ const Intro = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="px-0 lg:px-2 mx-0 lg:mx-2  md:mt-8 md:min-h-[50vh] sm:flex flex-row-reverse items-center justify-between gap-40">
+        <div className="px-0 lg:px-2 mx-0 lg:mx-2 md:mt-8 md:min-h-[50vh] sm:flex flex-row-reverse items-center justify-between gap-24">
           <img
             className="block rounded-full object-cover
-            w-28 h-28 mb-7 md:w-40 md:h-40 "
+            w-32 h-32 mb-7 md:w-96 md:h-32"
             alt="Bayvao Verma"
             loading="lazy"
             src={me}
@@ -28,8 +28,11 @@ const Intro = () => {
             <p className="text-xl font-normal mt-3 dark:text-white">
               Backend Developer
             </p>
-            <p className="text-md mt-1 font-normal text-gray-800 opacity-90 dark:text-gray-400">
-              Passionate about Technoloy and Startups | Life long learner
+            <p className="text-sm mt-1 font-normal text-gray-800 opacity-90 dark:text-gray-400">
+              4 years of hands-on experience in designing, implementing,
+              testing, and maintaining complex systems using Java framework.
+              Adept at collaborating with cross-functional teams and
+              stakeholders to deliver high-quality products.
             </p>
             <a
               className="flex bg-blue-600 text-white px-4 py-2.5 

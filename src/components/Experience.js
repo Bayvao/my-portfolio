@@ -68,7 +68,8 @@ const Experience = () => {
         <ul className="list-none mx-1 my-6 pl-0.5 md:p-2 ">
           {data.map((experience) => (
             <li
-              className="px-0 py-4 border-s-[1.5px] border-blue-500 relative after:content-[''] after:absolute after:top-3 after:-left-2 after:p-1 after:rounded-full after:border-[2.7px] after:border-blue-500 after:bg-blue-500 "
+              className="px-0 py-4 border-s-[1.5px] border-blue-500 relative 
+              after:content-[''] after:absolute after:top-3 after:-left-2 after:p-1 after:rounded-full after:border-[2.7px] after:border-blue-500 after:bg-blue-500 "
               key={experience.id}
             >
               <div className="block sm:flex items-center justify-between relative -top-2.5 mx-8">

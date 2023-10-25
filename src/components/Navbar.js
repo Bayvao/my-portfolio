@@ -75,7 +75,7 @@ const Navbar = () => {
             <div
               className={`${
                 !toggle ? "hidden" : "flex"
-              } p-6 bg-black-gradient absolute top-16 -right-6
+              } p-6 bg-black-gradient absolute top-12 -right-6
            mx-6 my-2 w-full h-screen sidebar bg-white dark:bg-slate-800`}
             >
               <ul className="list-none flex  justify-start items-start flex-1 flex-col">
