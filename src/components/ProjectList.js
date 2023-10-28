@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { BsChevronDown } from "react-icons/bs";
+import { data } from "../utils/data";
+import { useLocation } from "react-router-dom";
 
 const container = {
   hidden: { opacity: 0, y: 300 },
@@ -22,9 +24,12 @@ const item = {
   },
 };
 
-const ProjectList = ({ projects }) => {
+const ProjectList = () => {
+  const { projects } = data;
+  const { pathname } = useLocation();
+
   return (
-    <div>
+    <div className={`${pathname === "/blogs" ? "mt-24" : ""}`}>
       <motion.div
         initial={{ opacity: 0, y: 300 }}
         animate={{ opacity: 1, y: 0 }}

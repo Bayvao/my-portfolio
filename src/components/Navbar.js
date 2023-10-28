@@ -2,6 +2,7 @@ import { useState } from "react";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import { BsMoon, BsSun } from "react-icons/bs";
+import { Link, useNavigate } from "react-router-dom";
 
 export const navLinks = [
   {
@@ -19,8 +20,9 @@ export const navLinks = [
 ];
 
 const Navbar = () => {
-  const [theme, setTheme] = useState("light");
+  const navigate = useNavigate();
 
+  const [theme, setTheme] = useState("light");
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
@@ -34,12 +36,20 @@ const Navbar = () => {
     }
   };
 
+  const handleNavChange = (title, id) => {
+    setActive(title);
+    navigate(`${id}`);
+  };
+
   return (
     <div className="overflow-auto">
       <div className="fixed w-full top-0 z-50 backdrop-filter backdrop-blur-md border-b border-gray-200">
         <nav className=" flex px-8 ss:px-18 sm:px-20 md:px-40 lg:px-60 py-2 items-center bg-opacity-30">
           {/* Logo */}
-          <h1 className="hidden sm:inline-block mx-4 text-2xl text-black dark:text-white">
+          <h1
+            className="hidden sm:inline-block mx-4 text-2xl cursor-pointer text-black dark:text-white"
+            onClick={() => handleNavChange("Home", "/")}
+          >
             Bayvao
           </h1>
 
@@ -49,11 +59,11 @@ const Navbar = () => {
               <li
                 key={nav.id}
                 className={`font-poppins font-normal cursor-pointer text-[16px] antialiased hover:border-b-2 dark:text-white ${
-                  active === nav.title ? "text-green-500" : "text-dimWhite"
+                  active === nav.title ? "text-white" : "text-dimWhite"
                 } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
-                onClick={() => setActive(nav.title)}
+                onClick={() => handleNavChange(nav.title, nav.id)}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                {nav.title}
               </li>
             ))}
           </ul>
@@ -87,7 +97,7 @@ const Navbar = () => {
                     } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                     onClick={() => setActive(nav.title)}
                   >
-                    <a href={`#${nav.id}`}>{nav.title}</a>
+                    {nav.title}
                   </li>
                 ))}
               </ul>

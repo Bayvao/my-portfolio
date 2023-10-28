@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import SkillCard from "./SkillCard";
+import { data } from "../utils/data";
 
 const container = {
   hidden: { opacity: 0, y: 300 },
@@ -21,7 +22,8 @@ const item = {
   },
 };
 
-const Skills = ({ skills }) => {
+const Skills = () => {
+  const { skills } = data;
   return (
     <div className="sm:mx-4 sm:my-14">
       <motion.div
