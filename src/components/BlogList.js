@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { BsChevronDown } from "react-icons/bs";
 import BlogCard from "./BlogCard";
 import { data } from "../utils/data";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const container = {
   hidden: { opacity: 0, y: 300 },
@@ -26,6 +26,11 @@ const item = {
 
 const BlogList = () => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  const handleBlogSeeMore = () => {
+    navigate("/blogs");
+  };
 
   const { blogs } = data;
   return (
@@ -62,6 +67,7 @@ const BlogList = () => {
               className="flex justify-center items-center bg-transparent 
                 rounded-md mx-auto my-6 w-fit px-2 py-6
                  text-slate-700 hover:cursor-pointer dark:text-white"
+              onClick={handleBlogSeeMore}
             >
               See more <BsChevronDown className="ml-2 text-sm" />
             </button>
